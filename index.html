@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- Sync test marker: validates cross-repo automation without SITE_SYNC_PAT -->
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -130,6 +131,13 @@
     }
     .plan-name { font-size: 0.9rem; color: var(--muted); margin-bottom: 8px; }
     .plan-price { font-size: 2rem; font-weight: 700; }
+    .plan-price .old-price {
+      font-size: 1rem;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: line-through;
+      margin-right: 6px;
+    }
     .plan-price span { font-size: 0.9rem; font-weight: 400; color: var(--muted); }
     .plan-note { font-size: 0.85rem; color: var(--muted); margin-top: 6px; }
 
@@ -219,18 +227,18 @@
 <div class="pricing">
   <h2>Simple Pricing</h2>
   <p class="subtitle">Core features are free forever. Upgrade for more.</p>
-  <div class="plans">
-    <div class="plan">
-      <div class="plan-name">Monthly</div>
-      <div class="plan-price">$1.99 <span>/mo</span></div>
-      <div class="plan-note">3-day free trial</div>
+    <div class="plans">
+      <div class="plan">
+        <div class="plan-name">Monthly</div>
+        <div class="plan-price"><span class="old-price">$1.99</span>$0.99 <span>/mo</span></div>
+        <div class="plan-note">Launch promo · 3-day free trial</div>
+      </div>
+      <div class="plan featured">
+        <div class="plan-name">Annual</div>
+        <div class="plan-price"><span class="old-price">$14.99</span>$9.99 <span>/yr</span></div>
+        <div class="plan-note">~$0.83/mo · Save 17%</div>
+      </div>
     </div>
-    <div class="plan featured">
-      <div class="plan-name">Annual</div>
-      <div class="plan-price">$14.99 <span>/yr</span></div>
-      <div class="plan-note">~$1.25/mo · Save 37%</div>
-    </div>
-  </div>
   <div class="free-note">
     <strong>Free tier includes:</strong> unlimited grammar fix, translate, and shorten — powered by on-device AI. No account required.
   </div>
