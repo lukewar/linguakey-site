@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LinguaKey — AI Keyboard for iOS</title>
+  <meta name="description" content="LinguaKey is a privacy-first AI keyboard for iOS. Fix grammar, translate, shorten, and ask AI anything — all on-device.">
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+  <style>
+    :root {
+      --purple: #7C3AED;
+      --purple-light: #A78BFA;
+      --bg: #0F0F11;
+      --surface: #1A1A1F;
+      --text: #F5F5F7;
+      --muted: #8E8E93;
+      --border: rgba(255,255,255,0.08);
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--purple-light); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+
+    /* Header */
+    .header {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 80px 24px 40px;
+      text-align: center;
+    }
+    .logo {
+      width: 80px; height: 80px;
+      border-radius: 18px;
+      margin-bottom: 24px;
+      background: linear-gradient(135deg, var(--purple), #6D28D9);
+      display: inline-flex; align-items: center; justify-content: center;
+      font-size: 36px;
+    }
+    h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+    }
+    .tagline {
+      font-size: 1.25rem;
+      color: var(--muted);
+      max-width: 520px;
+      margin: 0 auto 32px;
+    }
+    .badge {
+      display: inline-block;
+      height: 54px;
+      opacity: 0.9;
+    }
+    .badge:hover { opacity: 1; }
+
+    /* Features */
+    .features {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 40px 24px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .feature {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px;
+    }
+    .feature-icon { font-size: 28px; margin-bottom: 12px; }
+    .feature h3 { font-size: 1.1rem; font-weight: 600; margin-bottom: 6px; }
+    .feature p { font-size: 0.95rem; color: var(--muted); }
+
+    /* Privacy banner */
+    .privacy-banner {
+      max-width: 800px;
+      margin: 20px auto;
+      padding: 28px 32px;
+      background: linear-gradient(135deg, rgba(124,58,237,0.12), rgba(109,40,217,0.06));
+      border: 1px solid rgba(124,58,237,0.2);
+      border-radius: 16px;
+      text-align: center;
+    }
+    .privacy-banner h3 { font-size: 1.2rem; margin-bottom: 8px; }
+    .privacy-banner p { color: var(--muted); font-size: 0.95rem; }
+
+    /* Pricing */
+    .pricing {
+      max-width: 600px;
+      margin: 40px auto;
+      padding: 0 24px;
+      text-align: center;
+    }
+    .pricing h2 { font-size: 1.8rem; margin-bottom: 8px; }
+    .pricing .subtitle { color: var(--muted); margin-bottom: 32px; }
+    .plans {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 16px;
+    }
+    .plan {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      padding: 28px 20px;
+    }
+    .plan.featured {
+      border-color: var(--purple);
+      position: relative;
+    }
+    .plan.featured::before {
+      content: 'Best Value';
+      position: absolute;
+      top: -12px; left: 50%; transform: translateX(-50%);
+      background: var(--purple);
+      color: white;
+      font-size: 0.75rem;
+      font-weight: 600;
+      padding: 4px 12px;
+      border-radius: 100px;
+    }
+    .plan-name { font-size: 0.9rem; color: var(--muted); margin-bottom: 8px; }
+    .plan-price { font-size: 2rem; font-weight: 700; }
+    .plan-price span { font-size: 0.9rem; font-weight: 400; color: var(--muted); }
+    .plan-note { font-size: 0.85rem; color: var(--muted); margin-top: 6px; }
+
+    /* Free */
+    .free-note {
+      margin-top: 24px;
+      padding: 16px;
+      background: var(--surface);
+      border-radius: 12px;
+      font-size: 0.95rem;
+      color: var(--muted);
+    }
+
+    /* Footer */
+    .footer {
+      max-width: 800px;
+      margin: 60px auto 0;
+      padding: 24px;
+      border-top: 1px solid var(--border);
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+    .footer-links { margin-bottom: 8px; }
+    .footer-links a { margin: 0 12px; }
+
+    @media (max-width: 600px) {
+      .header { padding: 48px 20px 24px; }
+      h1 { font-size: 1.8rem; }
+      .tagline { font-size: 1.05rem; }
+      .features { grid-template-columns: 1fr; padding: 24px 20px; }
+      .plans { grid-template-columns: 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<div class="header">
+  <div class="logo">⌨️</div>
+  <h1>LinguaKey</h1>
+  <p class="tagline">AI-powered keyboard for iOS. Fix grammar, translate, and transform text — all on-device, all private.</p>
+  <!-- Replace with actual App Store link when available -->
+  <!--<a href="https://apps.apple.com/app/linguakey/idXXXXXXXXXX">
+    <img class="badge" src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us" alt="Download on the App Store">
+  </a>-->
+  <p style="color: var(--muted); font-size: 0.95rem; margin-top: 8px;">Coming soon to the App Store</p>
+</div>
+
+<div class="features">
+  <div class="feature">
+    <div class="feature-icon">✏️</div>
+    <h3>Fix Grammar</h3>
+    <p>Correct spelling and grammar instantly. Works right from your keyboard in any app.</p>
+  </div>
+  <div class="feature">
+    <div class="feature-icon">🌍</div>
+    <h3>Translate</h3>
+    <p>Translate between 29+ languages on-device. No internet required.</p>
+  </div>
+  <div class="feature">
+    <div class="feature-icon">✨</div>
+    <h3>Ask AI</h3>
+    <p>Free-form instructions: "make it formal", "rewrite as a poem", anything you can describe.</p>
+  </div>
+  <div class="feature">
+    <div class="feature-icon">⚡</div>
+    <h3>Shorten</h3>
+    <p>Make long text concise with one tap. Perfect for messages and emails.</p>
+  </div>
+  <div class="feature">
+    <div class="feature-icon">🔧</div>
+    <h3>Custom Actions</h3>
+    <p>Create your own text transformations with custom prompts.</p>
+  </div>
+  <div class="feature">
+    <div class="feature-icon">🔒</div>
+    <h3>100% Private</h3>
+    <p>All AI runs on your device. No servers, no tracking, no data collection.</p>
+  </div>
+</div>
+
+<div class="privacy-banner">
+  <h3>Your text never leaves your device</h3>
+  <p>LinguaKey uses Apple Intelligence and on-device language models. We have no servers and collect zero data.</p>
+</div>
+
+<div class="pricing">
+  <h2>Simple Pricing</h2>
+  <p class="subtitle">Core features are free forever. Upgrade for more.</p>
+  <div class="plans">
+    <div class="plan">
+      <div class="plan-name">Monthly</div>
+      <div class="plan-price">$1.99 <span>/mo</span></div>
+      <div class="plan-note">3-day free trial</div>
+    </div>
+    <div class="plan featured">
+      <div class="plan-name">Annual</div>
+      <div class="plan-price">$14.99 <span>/yr</span></div>
+      <div class="plan-note">~$1.25/mo · Save 37%</div>
+    </div>
+  </div>
+  <div class="free-note">
+    <strong>Free tier includes:</strong> unlimited grammar fix, translate, and shorten — powered by on-device AI. No account required.
+  </div>
+</div>
+
+<div class="footer">
+  <div class="footer-links">
+    <a href="privacy.html">Privacy Policy</a>
+    <a href="support.html">Support</a>
+  </div>
+  <p>&copy; 2025 LinguaKey. All rights reserved.</p>
+</div>
+
+</body>
+</html>

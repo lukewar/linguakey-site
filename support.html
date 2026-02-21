@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Support — LinguaKey</title>
+  <style>
+    :root {
+      --bg: #0F0F11;
+      --surface: #1A1A1F;
+      --text: #F5F5F7;
+      --muted: #8E8E93;
+      --border: rgba(255,255,255,0.08);
+      --purple: #7C3AED;
+      --purple-light: #A78BFA;
+    }
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'SF Pro Display', 'Segoe UI', system-ui, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.7;
+      -webkit-font-smoothing: antialiased;
+    }
+    a { color: var(--purple-light); text-decoration: none; }
+    a:hover { text-decoration: underline; }
+    .container {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 60px 24px;
+    }
+    .back { display: inline-block; margin-bottom: 32px; font-size: 0.9rem; }
+    h1 { font-size: 2rem; font-weight: 700; margin-bottom: 8px; }
+    .subtitle { color: var(--muted); margin-bottom: 40px; }
+    h2 { font-size: 1.2rem; font-weight: 600; margin: 32px 0 12px; }
+    p { font-size: 1rem; color: #D1D1D6; margin-bottom: 12px; }
+    .faq {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      margin-bottom: 12px;
+      overflow: hidden;
+    }
+    .faq summary {
+      padding: 16px 20px;
+      cursor: pointer;
+      font-weight: 600;
+      font-size: 1rem;
+      list-style: none;
+    }
+    .faq summary::-webkit-details-marker { display: none; }
+    .faq summary::before { content: '▸ '; color: var(--purple-light); }
+    .faq[open] summary::before { content: '▾ '; }
+    .faq .answer {
+      padding: 0 20px 16px;
+      color: #D1D1D6;
+      font-size: 0.95rem;
+    }
+    .contact-box {
+      background: linear-gradient(135deg, rgba(124,58,237,0.12), rgba(109,40,217,0.06));
+      border: 1px solid rgba(124,58,237,0.2);
+      border-radius: 16px;
+      padding: 28px;
+      text-align: center;
+      margin-top: 40px;
+    }
+    .contact-box h3 { margin-bottom: 8px; }
+    .contact-box a {
+      display: inline-block;
+      margin-top: 12px;
+      background: var(--purple);
+      color: white;
+      padding: 10px 24px;
+      border-radius: 100px;
+      font-weight: 600;
+      font-size: 0.95rem;
+    }
+    .contact-box a:hover { opacity: 0.9; text-decoration: none; }
+    .footer {
+      margin-top: 48px;
+      padding-top: 24px;
+      border-top: 1px solid var(--border);
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+  </style>
+</head>
+<body>
+
+<div class="container">
+  <a class="back" href="index.html">← Back to LinguaKey</a>
+
+  <h1>Support</h1>
+  <p class="subtitle">Common questions and how to get help.</p>
+
+  <h2>Frequently Asked Questions</h2>
+
+  <details class="faq">
+    <summary>How do I enable LinguaKey as my keyboard?</summary>
+    <div class="answer">
+      <p>Go to <strong>Settings → General → Keyboard → Keyboards → Add New Keyboard</strong> and select <strong>LinguaKey</strong>. Then tap LinguaKey in the list and enable <strong>Allow Full Access</strong> for all features to work.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>Is my text data private?</summary>
+    <div class="answer">
+      <p>Yes. When using on-device AI (the default), all text processing happens entirely on your iPhone. No text is sent anywhere. We have no servers and collect no data. See our <a href="privacy.html">Privacy Policy</a> for details.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>What is "Full Access" and why does LinguaKey need it?</summary>
+    <div class="answer">
+      <p>Full Access is an iOS permission required for features like dictation (speech-to-text) and cloud AI (if you use your own API key). Without Full Access, all core features still work — grammar fix, translate, shorten, and Ask AI with on-device models.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>How do I use Ask AI?</summary>
+    <div class="answer">
+      <p>Type your text, then add <code>//</code> followed by your instruction. For example: <code>Hello world // make it formal</code>. Then tap the Ask AI button. You can also use the Suggestions or Dictation tabs for hands-free input.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>What's included in the free tier?</summary>
+    <div class="answer">
+      <p>The free tier includes unlimited grammar fix, translate, and shorten — all powered by on-device AI. You also get 5 Ask AI requests per day and up to 2 custom actions. No account required.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>How do I cancel my subscription?</summary>
+    <div class="answer">
+      <p>Subscriptions are managed by Apple. Go to <strong>Settings → Apple ID → Subscriptions</strong> on your iPhone to manage or cancel. Your Pro access continues until the end of the current billing period.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>How do I restore my purchase on a new device?</summary>
+    <div class="answer">
+      <p>Open LinguaKey → Settings → Pro Plans → Restore Purchases. Your subscription is tied to your Apple ID and will be restored automatically.</p>
+    </div>
+  </details>
+
+  <details class="faq">
+    <summary>The keyboard isn't appearing in some apps</summary>
+    <div class="answer">
+      <p>Some apps restrict third-party keyboards (e.g., password fields, banking apps). This is an iOS security feature and cannot be overridden. LinguaKey works in most text fields including Messages, Notes, Mail, Safari, and social media apps.</p>
+    </div>
+  </details>
+
+  <div class="contact-box">
+    <h3>Need more help?</h3>
+    <p>We're happy to assist with any issues.</p>
+    <a href="mailto:support@linguakey.app">Email Support</a>
+  </div>
+
+  <div class="footer">
+    <p>&copy; 2025 LinguaKey. All rights reserved.</p>
+  </div>
+</div>
+
+</body>
+</html>
